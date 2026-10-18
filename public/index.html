@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f3eb">
+<title>The factory in the box</title>
+<meta name="description" content="What if a drug factory could go where it was needed? Look inside a manufacturing pod, try adding more and explore the evidence behind the idea.">
+<meta property="og:title" content="The factory in the box">
+<meta property="og:description" content="A drug factory that travels. Explore what goes inside, when more pods help and what we know so far.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script src="model.js" defer></script>
+<script src="scene.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#workspace">Skip to the current room</a>
+<header class="masthead">
+<button type="button" class="brand" data-route="start"><span aria-hidden="true">⊞</span> THE FACTORY IN THE BOX</button>
+<span class="edition">AN INTERACTIVE EXPLAINER <i>18 OCT 2026</i></span>
+<button type="button" class="about-short" data-notes="about" aria-label="About this exhibit">i</button>
+<nav class="room-tabs" role="tablist" aria-label="Explore the exhibit">
+<button type="button" role="tab" id="tab-start" aria-controls="start" aria-selected="true" data-room="start">Start</button>
+<button type="button" role="tab" id="tab-pod" aria-controls="pod" aria-selected="false" tabindex="-1" data-room="pod">Pod</button>
+<button type="button" role="tab" id="tab-scale" aria-controls="scale" aria-selected="false" tabindex="-1" data-room="scale">Scale</button>
+<button type="button" role="tab" id="tab-one" aria-controls="one" aria-selected="false" tabindex="-1" data-room="one">N-of-1</button>
+<button type="button" role="tab" id="tab-evidence" aria-controls="evidence" aria-selected="false" tabindex="-1" data-room="evidence">Evidence</button>
+</nav>
+</header>
+<main id="workspace" tabindex="-1">
+<section class="room start-room" id="start" role="tabpanel" aria-labelledby="tab-start" tabindex="0">
+<div class="intro-copy">
+<p class="eyebrow">MODULAR MEDICINE MANUFACTURING</p>
+<h1>The factory<br>in the <em>box.</em></h1>
+<p class="intro-dek">Medicine travels. What if the factory did too?</p>
+<p class="intro-context">Mark Cuban describes drug-making pods that can be shipped and linked together. The attraction isn’t just a smaller factory. It’s the possibility of putting production closer to the people who need it.</p>
+<button type="button" class="primary" data-route="pod">Open the pod <span aria-hidden="true">↗</span></button>
+<p class="fine">An independent explainer, not an official Cost Plus Drugs site.<br>The models are illustrations, not clinical or production guidance.</p>
+</div>
+<div class="intro-scene">
+<img src="pod-cover.jpg" width="1000" height="760" alt="An illustrated manufacturing pod with its cover lifted to show four work areas and a small amber robot.">
+<div class="intro-questions">
+<button type="button" data-route="pod"><b>01</b><span>What’s in the box?<small>Take a look inside</small></span><i>↗</i></button>
+<button type="button" data-route="scale"><b>02</b><span>Twice the pods. Twice the output?<small>Try the experiment</small></span><i>↗</i></button>
+<button type="button" data-route="evidence"><b>03</b><span>What’s been shown?<small>Read the sources</small></span><i>↗</i></button>
+</div>
+</div>
+</section>
+
+<section class="room" id="pod" role="tabpanel" aria-labelledby="tab-pod" tabindex="0" hidden>
+<div class="room-heading"><div><p class="eyebrow">01 / INSIDE THE POD</p><h2 tabindex="-1">Take a look <em>inside.</em></h2></div><button type="button" class="note-button" data-notes="boundaries">What else is needed? ↗</button></div>
+<div class="pod-workbench">
+<div class="pod-stage">
+<div class="stage-meta"><span>ILLUSTRATIVE MODEL</span><span id="renderer-status">2D DIAGRAM</span></div>
+<div id="pod-view" class="pod-view">
+<svg id="pod-fallback" viewBox="0 0 900 560" role="img" aria-label="Conceptual module: materials, process, robotic handling and a symbolic quality desk.">
+<defs><linearGradient id="pod-shade"><stop stop-color="#f8faf3"/><stop offset="1" stop-color="#c5d7cf"/></linearGradient></defs>
+<path d="M90 330 600 140 830 270 320 465Z" fill="#ccd8ce"/>
+<path d="M90 330V360L320 495V465ZM320 465 830 270V300L320 495" fill="#8da99e"/>
+<path d="M140 320 605 151 792 265 320 444Z" fill="#e1ece0"/>
+<g stroke="#6c9185" stroke-width="2" fill="#91bdae"><path d="M180 330V250L240 227 292 258V340L232 363Z"/><path d="M330 280V210L390 187 442 218V290L382 313Z"/><path d="M500 270V180L555 160 615 195V285L560 305Z"/></g>
+<path d="M545 210 548 145 585 122 625 170 615 205" fill="none" stroke="#d9a23e" stroke-width="18" stroke-linejoin="round"/>
+<path d="M665 295V235L717 216 762 243V300L710 321Z" fill="#8faeae"/>
+<g id="fallback-shell"><path d="M100 190 610 0 840 130 330 325Z" fill="url(#pod-shade)" stroke="#a2b8ae" stroke-width="2"/><path d="M330 325V350L840 155V130" fill="#91aaa1"/><path d="M100 190V215L330 350V325" fill="#d7e2d8"/><path d="M230 190 590 56 690 114 330 248Z" fill="#e8efe5" stroke="#9bb1a6"/></g>
+</svg>
+<button class="hotspot" data-hotspot="1" type="button" aria-label="Inspect materials and transfer" aria-pressed="false">1</button>
+<button class="hotspot" data-hotspot="2" type="button" aria-label="Inspect the controlled process" aria-pressed="false">2</button>
+<button class="hotspot" data-hotspot="3" type="button" aria-label="Inspect robotic filling" aria-pressed="false">3</button>
+<button class="hotspot" data-hotspot="4" type="button" aria-label="Inspect checks and release" aria-pressed="false">4</button>
+</div>
+<div class="view-toolbar" role="group" aria-label="Camera controls">
+<button type="button" data-view="isometric" aria-pressed="true">3D</button>
+<button type="button" data-view="front" aria-pressed="false">Front</button>
+<button type="button" data-view="top" aria-pressed="false" aria-label="Top view, cover hidden">Top</button>
+<button type="button" id="rotate-left" aria-label="Rotate camera left">↶</button>
+<button type="button" id="rotate-right" aria-label="Rotate camera right">↷</button>
+<button type="button" id="reset-view" aria-label="Reset camera">Reset</button>
+</div>
+<p class="stage-help" id="view-help">Select a numbered station, or use the buttons to change the view.</p>
+</div>
+<aside class="pod-inspector">
+<div class="shell-control"><label for="shell">Lift the cover <output id="shell-label" for="shell">68%</output></label><input id="shell" type="range" min="0" max="100" step="1" value="68"></div>
+<div class="zone-tabs" role="group" aria-label="Inspect the conceptual module">
+<button type="button" data-zone="0" aria-label="Whole system" aria-pressed="true">All</button>
+<button type="button" data-zone="1" aria-label="1 / Materials" aria-pressed="false">1<span>Materials</span></button>
+<button type="button" data-zone="2" aria-label="2 / Process" aria-pressed="false">2<span>Process</span></button>
+<button type="button" data-zone="3" aria-label="3 / Robotics" aria-pressed="false">3<span>Robotics</span></button>
+<button type="button" data-zone="4" aria-label="4 / Quality" aria-pressed="false">4<span>Quality</span></button>
+</div>
+<div class="zone-readout" aria-live="polite" aria-atomic="true"><p id="zone-tag" class="eyebrow">THE ROOM</p><h3 id="zone-title">Control the conditions.</h3><p id="zone-copy">Clean air, cleaning and maintenance help keep the room suitable for its process. A new location still needs the right site connections.</p></div>
+<div class="inspector-notes"><button type="button" id="zone-more" class="text-button">More about this part ↗</button><button type="button" class="text-button" data-notes="ai">What about AI? ↗</button></div>
+<p class="pod-disclaimer">A real pod may handle only part of the process shown here.</p>
+</aside>
+</div>
+</section>
+
+<section class="room scale-room guided" id="scale" role="tabpanel" aria-labelledby="tab-scale" tabindex="0" hidden>
+<div class="room-heading"><div><p class="eyebrow">02 / THE SCALE-OUT EXPERIMENT</p><h2 tabindex="-1">Twice the pods. <em>Twice the output?</em></h2></div><button type="button" class="note-button" data-notes="math">How the model works ↗</button></div>
+<div class="scale-workbench">
+<div class="network-pane">
+<div class="stage-meta"><span>INVENTED NUMBERS</span><span>ARBITRARY UNITS / NOT DOSES</span></div>
+<svg id="network" viewBox="0 0 800 385" role="img" aria-label="Capacity experiment with made-up numbers."><text x="50" y="29" class="network-section">1 / PODS</text><text x="640" y="29" class="network-section">2 / SHARED CHECKS</text><g id="network-pods"></g><path class="network-bus" id="network-bus" d="M555 100V265M555 180H640"/><rect id="release-box" x="640" y="132" width="135" height="99" rx="4" class="release-box"/><text x="707" y="163" class="network-text">CHECKS</text><text x="707" y="184" class="network-text">CAPACITY</text><text x="707" y="212" id="network-capacity" class="network-value">240</text><text x="707" y="260" id="network-limit" class="network-limit">SPARE CAPACITY</text><path d="M65 337H556" class="utility-bus" id="utility-bus"/><text x="65" y="369" class="network-note" id="utility-label">SHARED UTILITIES ON</text></svg>
+<div class="compact-network" id="compact-network" role="img" aria-label="Two pods supply shared checks with capacity 240."><div><span class="compact-caption">PODS / 100 EACH</span><div id="compact-pods"></div></div><span class="compact-arrow" aria-hidden="true">→</span><div class="compact-checks" id="compact-checks"><span>SHARED CHECKS</span><b id="compact-capacity">240</b><small id="compact-limit">SPARE CAPACITY</small></div><p id="compact-utility">Shared utilities on</p></div>
+<div class="output-comparison"><div><span id="comparison-label">Starting output → now</span><p><b id="reference-value">200</b><span aria-hidden="true">→</span><strong id="comparison-value">200</strong></p></div><span class="change-badge" id="output-change">STARTING POINT</span></div>
+<div class="output-bars" aria-label="Model capacities">
+<div><span>Pod capacity</span><b id="production-value">200</b><div><i id="production-bar"></i></div></div>
+<div><span>Checking limit</span><b id="quality-value">240</b><div><i id="quality-bar"></i></div></div>
+<div class="output-row"><span>Output</span><b id="output-value">200</b><div><i id="output-bar"></i></div></div>
+</div>
+<p class="bar-axis"><span class="full-axis">All bars run from 0 to 600. Made-up work units per cycle.</span><span class="compact-axis">Made-up work units per cycle. Not doses.</span></p>
+</div>
+<div class="scale-controls">
+<div class="experiment-modes" role="group" aria-label="Choose guided experiment or free controls"><button type="button" data-experiment="guided" aria-pressed="true">Walk me through it</button><button type="button" data-experiment="free" aria-pressed="false">Let me experiment</button></div>
+<div class="scale-readout" aria-live="polite" aria-atomic="true"><p class="eyebrow" id="limit-tag">BOTTLENECK / PODS</p><h3 id="scale-result">The pods set the pace.</h3><p id="scale-copy">Your 2 working pods could supply 200 units. The checks can handle 240.</p></div>
+<div class="guided-controls" id="guided-controls"><div class="experiment-progress"><span id="experiment-step">1 / 5</span><span id="experiment-dots" aria-hidden="true"></span><button type="button" id="experiment-replay" class="replay-button">↺ Start again</button></div><p id="experiment-prompt">Would adding two more pods double what gets through?</p><div class="guided-actions"><button type="button" id="experiment-back" aria-label="Previous experiment step" disabled>←</button><button type="button" id="experiment-next">Double the pods <span aria-hidden="true">→</span></button></div></div>
+<div id="free-controls" hidden>
+<div class="control-tabs" role="group" aria-label="Choose experiment controls"><button type="button" data-controls="adjust" aria-pressed="true">Adjust capacity</button><button type="button" data-controls="disrupt" aria-pressed="false">Test a failure</button><button type="button" id="scale-reset" aria-label="Reset the experiment">↺</button></div>
+<div class="adjust-controls" id="adjust-controls">
+<div class="capacity-input"><label for="pods">Number of pods <output id="pods-value" for="pods">2</output></label><input id="pods" type="range" min="1" max="6" step="1" value="2"></div>
+<div class="capacity-input"><label for="quality">Checking capacity <output id="quality-label" for="quality">240 units</output></label><input id="quality" type="range" min="0" max="600" step="20" value="240"></div>
+<div class="scenario-buttons"><button type="button" id="double">Double the pods ↗</button><button type="button" id="clear-bottleneck">Expand checks ↗</button></div>
+</div>
+<div class="disrupt-controls" id="disrupt-controls" hidden><label><input id="outage" type="checkbox">Pause one pod</label><label><input id="utilities" type="checkbox" checked>Shared utilities on</label><p>This model shares utilities across all pods. Real plants may separate systems or provide backups.</p></div>
+</div>
+<button type="button" class="text-button" id="scale-why">Why this result? ↗</button>
+</div>
+</div>
+</section>
+
+<section class="room one-room" id="one" role="tabpanel" aria-labelledby="tab-one" tabindex="0" hidden>
+<div class="room-heading"><div><p class="eyebrow">03 / N-OF-1</p><h2 tabindex="-1">One patient. <em>What changes?</em></h2></div><button type="button" class="note-button" data-notes="individual">More about N-of-1 ↗</button></div>
+<div class="one-console">
+<div class="one-switch" role="group" aria-label="Compare an established medicine with an investigational therapy for one patient"><button type="button" data-one="many" aria-label="One established medicine, many patients" aria-pressed="true">Established medicine</button><button type="button" data-one="one" aria-label="An investigational therapy for one patient" aria-pressed="false">One-patient therapy</button></div>
+<div class="one-body"><div class="one-visual" id="one-visual" role="img" aria-label="One established medicine connected to many illustrative patients."><span class="dossier">PRODUCT<b>01</b></span><span class="one-arrow" aria-hidden="true">→</span><div class="recipient-field" id="recipients" aria-hidden="true"></div></div><div class="one-copy" aria-live="polite"><p id="one-kicker" class="eyebrow">AN ESTABLISHED MEDICINE</p><h3 id="one-result">One medicine, many patients.</h3><p id="one-copy">With an established medicine, a qualified process can be used repeatedly. Each run still needs the right controls, records and checks.</p><div class="one-needs" id="one-needs"></div></div></div>
+<div class="one-boundary"><b>One patient doesn’t mean one dose, one batch or a guaranteed result.</b><p>FDA’s February 2026 framework is still <strong>draft guidance</strong>. These examples do not follow the same approval route.</p></div>
+</div>
+</section>
+
+<section class="room evidence-room" id="evidence" role="tabpanel" aria-labelledby="tab-evidence" tabindex="0" hidden>
+<div class="room-heading"><div><p class="eyebrow">04 / THE EVIDENCE</p><h2 tabindex="-1">What do we know <em>so far?</em></h2></div><button type="button" class="note-button" data-notes="sources">Read the sources ↗</button></div>
+<div class="evidence-workbench"><aside class="evidence-sidebar"><label for="evidence-filter">Choose what to read</label><select id="evidence-filter"><option value="all">All six notes</option><option value="documented">Company information &amp; research</option><option value="reported">Cuban’s description</option><option value="open">Open questions</option><option value="model">About our model</option></select><div id="evidence-index" class="evidence-index" role="group" aria-label="Choose an evidence note"></div><p class="evidence-caption">Follow a statement back to its source. That lets you distinguish what’s been described, what’s been tested and what still needs an answer.</p></aside><div class="evidence-card"><div id="evidence-content" aria-live="polite" aria-atomic="true"></div><div class="evidence-pager"><button type="button" id="evidence-prev" aria-label="Previous evidence note">←</button><span id="filter-status" role="status">1 of 6 notes</span><button type="button" id="evidence-next" aria-label="Next evidence note">→</button></div></div></div>
+</section>
+</main>
+<footer class="exhibit-footer"><button type="button" id="room-prev">← Back</button><span id="room-count" aria-live="polite">01 / 05</span><button type="button" class="footer-notes" data-notes="about">About this explainer</button><button type="button" id="room-next">Look inside →</button></footer>
+
+<dialog id="reader" aria-labelledby="reader-title"><div class="reader-top"><p class="eyebrow" id="reader-series">FIELD NOTES</p><button type="button" id="reader-close" aria-label="Close notes">×</button></div><h2 id="reader-title">Field notes</h2><div id="reader-body"></div><div class="reader-pager"><button type="button" id="reader-prev" aria-label="Previous note page">←</button><span id="reader-count" role="status">1 / 1</span><button type="button" id="reader-next" aria-label="Next note page">→</button></div></dialog>
+<a href="third-party-licenses.txt" id="license-link" hidden>Software license</a>
+<noscript><div class="no-script">Please enable JavaScript to explore the model and switch sections. No account is needed. You can also read <a href="https://www.markcubancostplusdrugcompany.com/">Cost Plus’s manufacturing description</a> or <a href="https://www.fda.gov/emergency-preparedness-and-response/innovative-technologies/about-advanced-manufacturing-public-health-emergency-preparedness-and-response">FDA’s overview of advanced manufacturing</a> directly.</div></noscript>
+</body>
+</html>
